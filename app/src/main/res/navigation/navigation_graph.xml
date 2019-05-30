@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="rumi.com.navigationcomponentdemo2.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/toDse"
+            app:destination="@id/dseFragment" />
+        <action
+            android:id="@+id/toStl"
+            app:destination="@id/stlFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dseFragment"
+        android:name="rumi.com.navigationcomponentdemo2.DseFragment"
+        android:label="fragment_dse"
+        tools:layout="@layout/fragment_dse" >
+        <action
+            android:id="@+id/toDseDetail"
+            app:destination="@id/dseDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/stlFragment"
+        android:name="rumi.com.navigationcomponentdemo2.StlFragment"
+        android:label="fragment_stl"
+        tools:layout="@layout/fragment_stl" />
+    <fragment
+        android:id="@+id/dseDetailFragment"
+        android:name="rumi.com.navigationcomponentdemo2.DseDetailFragment"
+        android:label="fragment_dse_detail"
+        tools:layout="@layout/fragment_dse_detail" >
+        <argument
+            android:name="dseName"
+            app:argType="string" />
+    </fragment>
+</navigation>
